@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from urllib2 import urlopen
-from lxml import html
 from pyquery import PyQuery as pq
 import sys
 import hashlib
@@ -11,13 +10,10 @@ url = 'http://suumo.jp/jj/bukken/ichiran/JJ012FC001/?ar=030&bs=021&cn=9999999&cn
 
 matchstr = u'築年月'
 matchselector = u'.property_unit .property_unit-info dt:contains("%s") + dd' % (matchstr)
-#print matchselector
 
 h = urlopen(url).read()
-#print h
 
 t = pq(h)
-# print tree.xpath('//div[@class="property_unit"]/text()')
 
 track_dir = "/home/ed/housebot"
 try:
@@ -48,3 +44,4 @@ for i in (t(matchselector).items()):
     print built
     print lnk
     print txt
+    print ""
