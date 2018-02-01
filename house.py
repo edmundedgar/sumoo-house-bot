@@ -42,6 +42,6 @@ for i in (t(matchselector).items()):
 
     txt = par.find('h2.property_unit-title a').text()
     print built
-    print lnk
+    print 'https://suumo.jp' + lnk
     print txt
     print ""
